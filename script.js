@@ -101,7 +101,7 @@ function getAverage(obj) {
 	return Math.floor((x + y + z) / 3.0); // CHANGE ME
 }
 
-console.log(getAverage({ x: 3.6, y: 7.8, z: 4.3 }));
+// console.log(getAverage({ x: 3.6, y: 7.8, z: 4.3 }));
 //
 function getAddress(city, country, address) {
 	console.log({ city, country, address });
@@ -173,6 +173,7 @@ function withMultiLineExpression() {
 		`;
 	return getString('Ryan');
 }
+
 console.log(withMultiLineExpression());
 //
 function curryAdd() {
@@ -186,3 +187,22 @@ function curryAdd() {
 	return curryAddition(9)(3)(5);
 }
 console.log(curryAdd());
+//
+// TRY AGAIN///////
+function getAverage(obj) {
+	let { x, y, z } = obj;
+	return Math.floor((x + y + z) / 3.0); // CHANGE ME
+}
+console.log(getAverage({ x: 3.6, y: 7.8, z: 4.3 }));
+//
+function getHistoricPrices(index) {
+	const bingo = index; // CHANGE ME
+	return bingo;
+}
+console.log(getHistoricPrices(true));
+//
+function restParams(first, ...rest) {
+	return first === 'first' && rest[0] === 'second';
+}
+
+console.log(restParams(1)); // CHANGE ME
