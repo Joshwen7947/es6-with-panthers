@@ -146,14 +146,71 @@ function compareDifference() {
 }
 compareDifference();
 //GROCERY COST
-function test(total, item) {
-	// let sum = 0;
-	for (let i = 0; i < user.transactionsMonthToDate.length; i++) {
+function sumGroceries() {
+	let sum = 0;
+	let data = user.transactionsMonthToDate;
+	for (let i = 0; i < data.length; i++) {
+		console.log(data[i], `i`, i);
+		let item = data[i];
 		if (item.category === 'Groceries') {
+			//add amount to my sum
 			sum += item.amount;
 		}
-		return sum;
 	}
+	return sum;
 }
-console.log(test());
-test();
+console.log(sumGroceries());
+//
+function sumEntertainment() {
+	let sum = 0;
+	let myArray = user.transactionsMonthToDate;
+	for (let i = 0; i < myArray.length; i++) {
+		let item = myArray[i];
+		if (item.category === 'Entertainment') {
+			sum += item.amount;
+		}
+	}
+	return sum;
+}
+console.log(sumEntertainment(), `num`);
+// conversion
+
+// Define a function that given a conversion rate of 23000vnd to 1usd returns if the account spent more usd than vnd was deposited into the account for the month.
+function convertToVnd() {
+	let myArray = user.transactionsMonthToDate;
+	for (let i = 0; i < myArray.length; i++) {
+		let item = myArray[i];
+		item.amount *= 23000;
+		item.currency = 'VND';
+	}
+	console.log(myArray);
+}
+convertToVnd();
+//
+// Define a function that returns an array of new objects where currency is VND and the amount is it's converted amount.
+// travel sum
+function sumTravel() {
+	let sum = 0;
+	let myArray = user.transactionsMonthToDate;
+	for (let i = 0; i < myArray.length; i++) {
+		let item = myArray[i];
+		if (item.category === 'Travel') {
+			sum += item.category;
+		}
+	}
+	return sum;
+}
+console.log(sumTravel());
+// Transportation
+function sumOfTrans() {
+	let sum = 0;
+	let data = user.transactionsMonthToDate;
+	for (let i = 0; i < data.length; i++) {
+		let item = data[i];
+		if (item.category === 'Transportation') {
+			sum += item.category;
+		}
+	}
+	return sum;
+}
+console.log(sumOfTrans());
